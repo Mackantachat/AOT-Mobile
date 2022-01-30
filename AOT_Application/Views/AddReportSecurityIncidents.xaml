@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.AddReportSecurityIncidents">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="1">
+
+                <StackLayout  HorizontalOptions="CenterAndExpand"  Orientation="Vertical" 
+                         Padding="16,13,16,40" Spacing="10" BackgroundColor="White">
+
+                    <Label Text="รายงานเหตุการณ์เกี่ยวกับการรักษาความปลอดภัย" TextColor="Black" FontAttributes="Bold"  FontSize="Subtitle"></Label>
+
+                    <Label Text="รายละเอียดเหตุการณ์" TextColor="Black" FontAttributes="Bold" ></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="รหัสเหตุการณ์ :"  TextColor="Black"></Label>
+
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200" IsEnabled="False"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทเหตุการณ์ :"       TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Picker VerticalOptions="Center" WidthRequest="200" Title="เลือกประเภทเหตุการณ์" >
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>ไม่มีความร้ายแรง</x:String>
+                                    <x:String>ร้ายแรงปานกลาง</x:String>
+                                    <x:String>ร้ายแรงมาก</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ชื่อเหตุการณ์ :"       TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สถานที่เกิดเหตุการณ์ : "       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เวลาที่เกิดเหตุการณ์ : "       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สังกัดที่เกี่ยวข้อง : "       TextColor="Black"></Label>
+                        <Picker VerticalOptions="Center" WidthRequest="200" Title="เลือกสังกัดที่เกี่ยวข้อง" >
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>ดอนเมือง</x:String>
+                                    <x:String>สุวรรณภูมิ</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="     "       TextColor="Black"></Label>
+                        <Button StyleClass="Link" VerticalOptions="Center" WidthRequest="200"   Text="คลิกเพื่อระบุพิกัดบนแผนที่" 
+                                BackgroundColor="#169BD5" TextColor="#FFFFFF" ></Button>
+                    </StackLayout>
+
+                    <Label Text="ภาพรายละเอียดเหตุการณ์ และผู้กระทำผิด" TextColor="Black" FontAttributes="Bold"></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal"  >
+                        <ImageButton HorizontalOptions="FillAndExpand" Source="camera.png" 
+                                     BackgroundColor="#063E81" WidthRequest="100" 
+                                     Clicked="OnPickPhotoButtonClicked" HeightRequest="50">
+                        </ImageButton>
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image x:Name="image"></Image>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                        <Button Text="บันทึก" HorizontalOptions="FillAndExpand" BackgroundColor="#169BD5" Clicked="Button_ClickedSave"></Button>
+                        <Button Text="ยกเลิก" HorizontalOptions="FillAndExpand" BackgroundColor="#F2F2F2" Clicked="Button_ClickedCancle"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

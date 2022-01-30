@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.App" >
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#063E81</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <Style x:Key="PageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+            </Style>
+            <!--<Style x:Key="switchlabel" TargetType="Label" Class="switchlabel">
+                
+            </Style>-->
+           
+
+            <!--<OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                <On Platform="iOS" Value="SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+                <On Platform="Android" Value="Assets/SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+                <On Platform="UWP" Value="SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="BOLDFont"
+            x:TypeArguments="x:String"
+            Android="SUKHUMVITSET-BOLD.TTF#Sukhumvit Set"
+            iOS="Assets/SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+            <OnPlatform x:Key="NormalFont"
+            x:TypeArguments="x:String"
+            Android="SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set"
+            iOS="Assets/SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+            <OnPlatform x:Key="TEXTFont"
+            x:TypeArguments="x:String"
+            Android="SUKHUMVITSET-TEXT.TTF#Sukhumvit Set"
+            iOS="Assets/SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />-->
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

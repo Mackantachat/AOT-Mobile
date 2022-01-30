@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.Login"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical"  Padding="32,0,32,200" BackgroundColor="White">
+
+        <!--<Label Text="Hello Forms with XAML ภาษาไทย">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="SUKHUMVITSET-MEDIUM" />
+                    <On Platform="Android" Value="SUKHUMVITSET-MEDIUM.TTF#Sukhumvit" />
+                    <On Platform="UWP" Value="Assets/SUKHUMVITSET-MEDIUM.TTF#Sukhumvit Set" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Label Text="Hello Forms with XAML  ภาษาไทย">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                    <On Platform="Android" Value="Lobster-Regular.ttf#Lobster" />
+                    <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Label Text="Hello Forms with XAML ภาษาไทย">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                    <On Platform="Android" Value="SUKHUMVITSET-MEDIUM.TTF#SukhumvitSet" />
+                    <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+
+        <Label Text="Hello Forms with XAML ภาษาไทย">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                    <On Platform="Android" Value="SUKHUMVITSET-MEDIUM.TTF#Sukhumvit-Set" />
+                    <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>-->
+
+        <Image HeightRequest="160" WidthRequest="160" HorizontalOptions="Center" Source="AOT_png.png" />
+        <BoxView HeightRequest="16"/>
+
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+            <Label Text="เข้าสู่ระบบ" VerticalOptions="Center" TextColor="Black" FontSize="Large" ></Label>
+        </StackLayout>
+        <BoxView WidthRequest="8"></BoxView>
+
+        <StackLayout x:Name="username" Orientation="Horizontal">
+            <!--<Label Text="Username  :" VerticalOptions="Center"></Label>-->
+            <BoxView WidthRequest="8"></BoxView>
+            <Entry Placeholder="    อีเมลของผู้ใช้งาน"  PlaceholderColor="#999999" HorizontalOptions="FillAndExpand"></Entry>
+        </StackLayout>
+        <StackLayout x:Name="password" Orientation="Horizontal">
+            <!--<Label Text="Password  :" VerticalOptions="Center"></Label>-->
+            <BoxView WidthRequest="11"></BoxView>
+            <Entry Placeholder="   รหัสผ่าน" IsPassword="True"  PlaceholderColor="#999999" HorizontalOptions="FillAndExpand"></Entry>
+        </StackLayout>
+        <BoxView HeightRequest="16"/>
+
+        <Button Text="เข้าสู่ระบบ"  HorizontalOptions="Fill" BackgroundColor="#0055A5" FontSize="Medium" TextColor="#FFFFFF" Clicked="Button_Clicked"></Button>
+
+        <BoxView HeightRequest="16"/>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Orientation="Horizontal">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                <CheckBox x:Name="termsOfServiceCheckBox" Color="#0055A5" ></CheckBox>
+                <Label Text="จำไว้ในระบบ"  VerticalOptions="Center" TextColor="Black" FontSize="Medium" ></Label>
+            </StackLayout>
+            <Button StyleClass="Link" Text="ลืมรหัสผ่าน"  VerticalOptions="Center" HorizontalOptions="EndAndExpand" TextColor="Black" FontSize="Medium" BackgroundColor="White" ></Button>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

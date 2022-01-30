@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.StatusFierExtingguisherUpload"
+             xmlns:vm="clr-namespace:AOT_Application.ViewModels"
+             Title="{Binding Title}"
+             Style="{StaticResource PageStyle}">
+
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Orientation="Vertical" Padding="16,13,16,40">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" >
+                <Button CornerRadius="100" WidthRequest="160" HeightRequest="40" HorizontalOptions="FillAndExpand" Text="ตรวจสอบถังดับเพลิง"       Clicked="Button_Clicked" ></Button>
+                <Button CornerRadius="100" WidthRequest="160" HeightRequest="40" HorizontalOptions="FillAndExpand" Text="แนบหลักฐาน"      ></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal"  >
+                    <ImageButton CornerRadius="100" HorizontalOptions="FillAndExpand" Source="camera.png" 
+                                     BackgroundColor="#063E81" WidthRequest="100" 
+                                     Clicked="OnPickPhotoButtonClicked" HeightRequest="50">
+                    </ImageButton>
+
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Image x:Name="image"></Image>
+                </StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Padding="5,20,16,0">
+                    <Label FontSize="Large" Text="เอกสารหลักฐาน หรือภาพถ่าย" TextColor="Black"></Label>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5,10,16,40">
+                    <ListView   x:Name="ItemsListView"
+                                    ItemsSource="{Binding Items}"
+                                    VerticalOptions="FillAndExpand" 
+                                    HorizontalOptions="FillAndExpand"
+                                    HasUnevenRows="true"
+                                    RefreshCommand="{Binding LoadItemsCommand}"
+                                    IsPullToRefreshEnabled="true"
+                                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                                    CachingStrategy="RecycleElement"
+                                    ItemSelected="OnItemSelected" >
+                        <d:ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>First Item</x:String>
+                                <x:String>Second Item</x:String>
+                                <x:String>Third Item</x:String>
+                                <x:String>Forth Item</x:String>
+                                <x:String>Fifth Item</x:String>
+                                <x:String>Sixth Item</x:String>
+                            </x:Array>
+                        </d:ListView.ItemsSource>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10" Orientation="Horizontal">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Text}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                        </StackLayout> 
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

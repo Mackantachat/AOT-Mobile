@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.CheckVechielPass2"
+             xmlns:vm="clr-namespace:AOT_Application.ViewModels"
+             Title="{Binding Title}"
+             Style="{StaticResource PageStyle}">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout  VerticalOptions="StartAndExpand" HorizontalOptions="Fill" Orientation="Vertical" Padding="16,13,16,40" BackgroundColor="White">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal" >
+                <Button CornerRadius="100" WidthRequest="160" HeightRequest="40" HorizontalOptions="FillAndExpand" Text="ตรวจสอบยานพาหนะ"  
+                         Clicked="Button_Clicked"></Button>
+                <Button CornerRadius="100" WidthRequest="160" HeightRequest="40" HorizontalOptions="FillAndExpand" Text="แนบหลักฐาน" Clicked="Button_Clicked"></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical" 
+                             HeightRequest="60" WidthRequest="250" BackgroundColor="#F2F2F2">
+
+                    <Label  TextColor="Black" IsVisible="True" Text="สถานะตรวจสอบสภาพยานพาหนะ" HorizontalTextAlignment="Center"></Label>
+                    <Label  TextColor="Green" IsVisible="true" Text="ผ่านการตรวจสอบแล้ว" HorizontalTextAlignment="Center"></Label>
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  Orientation="Vertical" 
+                         Spacing="10" >
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="#F2F2F2" >
+                    <Label HorizontalOptions="CenterAndExpand" Text="รายการตรวจสอบยานพาหนะ" FontSize="Medium" TextColor="Black"></Label>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                    <TableView Intent="Data"   HasUnevenRows="true" >
+                        <TableRoot>
+                            <TableSection>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label0" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw0" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  HeightRequest="50" >
+                                        <Label VerticalOptions="Center" Text="ทดสอบการรับความดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label1" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw1" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="สภาพภายนอกของถัง" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label2" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw2" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="ตัวถังบุบหรือมีรอยรั่วซึมหรือไม่" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label3" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw3" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="สลักล็อคคันโยก" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label4" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw4" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="สายฉีดว่าชำรุดหรือไม่" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label5" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw5" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label6" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw6" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label7" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw7" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label8" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw8" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label9" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw9" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label10" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw10" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label11" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw11" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label12" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw12" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label13" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw13" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label14" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw14" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน"  TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label15" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw15" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label16" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw16" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label17" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw17" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label18" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw18" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                                <ViewCell >
+                                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" HeightRequest="50">
+                                        <Label VerticalOptions="Center" Text="เกจวัดแรงดัน" TextColor="Black" HorizontalOptions="StartAndExpand" ></Label>
+                                        <Label x:Name="label19" Text="ไม่ผ่าน" VerticalOptions="Center"></Label>
+                                        <Switch x:Name="sw19" Toggled="Switch_Toggled" ></Switch>
+                                    </StackLayout>
+                                </ViewCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+
+                <StackLayout  Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" >
+                        <ImageButton Source="QR_Code.png" HeightRequest="50" WidthRequest="50" BackgroundColor="White"
+                                 VerticalOptions="Center" ></ImageButton>
+                        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="พิมพ์ QR Code"></Label>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand"  Orientation="Horizontal">
+                        <Button HeightRequest="50" WidthRequest="50" Text=" 1 " Clicked="Button_Clicked1"></Button>
+                        <Button HeightRequest="50" WidthRequest="50" Text=" 2 "></Button>
+                        <Button HeightRequest="50" WidthRequest="50" Text=" 3 " Clicked="Button_Clicked_1"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
+    
+    

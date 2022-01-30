@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.HistoryCriminalPerson"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+           
+            <ScrollView Grid.Row="1">
+
+                <StackLayout  HorizontalOptions="CenterAndExpand"  Orientation="Vertical" 
+                         Padding="16,13,16,40" Spacing="10" BackgroundColor="White">
+                    <Label Text="ภาพรายละเอียดเหตุการณ์ และผู้กระทำผิด" TextColor="Black" FontAttributes="Bold"></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal"  >
+                        <ImageButton HorizontalOptions="FillAndExpand" Source="camera.png" 
+                                     BackgroundColor="#063E81" WidthRequest="100" 
+                                     Clicked="OnPickPhotoButtonClicked" HeightRequest="50">
+                        </ImageButton>
+                        
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image x:Name="image"></Image>
+                    </StackLayout>
+                    
+
+                    <Label Text="รายละเอียดการกระทำผิด" TextColor="Black" FontAttributes="Bold" ></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="วันที่จับกุม :"       TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <DatePicker VerticalOptions="Center" WidthRequest="200"   ></DatePicker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เวลาที่จับกุม :"       TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <TimePicker VerticalOptions="Center" WidthRequest="200"     ></TimePicker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="รายละเอียดความผิด :"       TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สถานะที่กระทำความผิด : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="วิธีการดำเนินการ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="การดำเนินการ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ผู้ดำเนินการ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="วันที่ยึดบัตร : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทเหตุการณ์ : "       TextColor="Black"></Label>
+                        <Picker VerticalOptions="Center" WidthRequest="200"      ></Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทการกระทำผิด : "       TextColor="Black"></Label>
+                        <Picker VerticalOptions="Center" WidthRequest="200"      ></Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สถานะการดำเนินการ : "       TextColor="Black"></Label>
+                        <Picker VerticalOptions="Center" WidthRequest="200"      ></Picker>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="     "       TextColor="Black"></Label>
+                        <Button StyleClass="Link" VerticalOptions="Center" WidthRequest="200"   Text="คลิกเพื่อระบุพิกัดบนแผนที่" 
+                                BackgroundColor="#169BD5" TextColor="#FFFFFF" ></Button>
+                    </StackLayout>
+                    
+                    <Label Text="รายละเอียดยานพาหนะ" TextColor="Black" FontAttributes="Bold"></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ทะเบียนรถ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="หมายเลขข้างรถ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ยี่ห้อรถ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เลขที่ / เล่มที่ใบล็อคล้อ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เลขที่ / เล่มที่ใบยกรถ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เลขที่ใบจับกุม : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+
+                    <Label Text="รายละเอียดค่่าปรับ" TextColor="Black" FontAttributes="Bold"></Label>
+                    <FlexLayout Direction="Column" Padding="10,0,10,0">
+                        <BoxView HeightRequest="16"/>
+                        <BoxView HorizontalOptions="Fill" HeightRequest="1" Color="#000000"  />
+                    </FlexLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ค่าปรับ / ค่าเสียหาย : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ภาษีค่าปรับ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ผู้เสียค่าปรับ : "       TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                        <Button Text="บันทึก" HorizontalOptions="FillAndExpand" BackgroundColor="#169BD5"></Button>
+                        <Button Text="ยกเลิก" HorizontalOptions="FillAndExpand" BackgroundColor="#F2F2F2"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

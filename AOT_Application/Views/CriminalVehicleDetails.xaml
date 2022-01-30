@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.CriminalVehicleDetails"
+             xmlns:local1="clr-namespace:AOT_Application.Views"
+            Title="{Binding Title}">
+  <!--Pages can be added as references or inline-->
+
+    <ContentPage Title="ข้อมูลยานพาหนะ" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Orientation="Vertical">
+
+            </StackLayout>
+
+            <ScrollView Grid.Row="1">
+                <StackLayout  HorizontalOptions="CenterAndExpand"  Orientation="Vertical" 
+                         Padding="16,13,16,40" Spacing="10" >
+
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="รหัสยานหาหนะ : " TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"  IsReadOnly="True" IsEnabled="False"  Text="123123123"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="หมายเลขข้างรถ :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red" ></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200" Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ทะเบียนรถ :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทยานพาหนะ :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="จำนวนล้อเลื่อน :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ยี่ห้อรถ :" TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สีรถ :" TextColor="Black"></Label>
+                        <Entry VerticalOptions="Center" WidthRequest="200"      ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทยานพาหนะตามหน้าที่ :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200" Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="วันหมดอายุบัตรยาน :" TextColor="Black"></Label>
+                            <Label Text="*" TextColor="Red"></Label>
+                        </StackLayout>
+                        <Entry VerticalOptions="Center" WidthRequest="200" Text="{Binding ExtingguisherItem.Description}" d:Text="ExtingguisherItem description"  ></Entry>
+                    </StackLayout>
+                   
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                        <Button Text="บันทึก" HorizontalOptions="FillAndExpand" BackgroundColor="#169BD5"></Button>
+                        <Button Text="ยกเลิก" HorizontalOptions="FillAndExpand" BackgroundColor="#F2F2F2"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage>
+    <local1:HistoryCriminalVehicle />
+
+</TabbedPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AOT_Application.Views.AddCriminalPerson"
+             Title="เพิ่มการกระทำผิดบุคคล"
+             Style="{StaticResource PageStyle}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Orientation="Vertical" BackgroundColor="White">
+
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout  HorizontalOptions="CenterAndExpand"  Orientation="Vertical" 
+                         Padding="16,13,16,40" Spacing="10" >
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="รหัสบุคคล : "       TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"  IsReadOnly="False" IsEnabled="False" Text="{Binding CriminalPersonItem.Id}"  d:Text="CriminalPersonItem"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="คำนำหน้าชื่อ :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"    Text="" d:Text="CriminalPersonItem"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ชื่อ :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding CriminalPersonItem.EtlSystem}"  x:Name="Name"></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="นามสกุล :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"     Text="{Binding CriminalPersonItem.EtlTable}" d:Text="ExtingguisherItem description"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="รหัสบัตรประชาชน :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"     Text="{Binding CriminalPersonItem.EtlField}" d:Text="ExtingguisherItem description"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="วัน/เดือน/ปี เกิด: "      TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding CriminalPersonItem.EtlValue}"   ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ประเภทบุคคล : "       TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"     Text="{Binding CriminalPersonItem.Code}"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เบอร์โทรศัพท์มือถือ :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"    Text="{Binding CriminalPersonItem.Status}"  d:Text="ExtingguisherItem description"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="เชื้อชาติ :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"  Text="{Binding CriminalPersonItem.FlagReport}"  d:Text="ExtingguisherItem description"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                        <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="สัญชาติ :"       TextColor="Black"></Label>
+                        <Label Text="*" TextColor="Red"></Label>
+                    </StackLayout>
+                    <Entry VerticalOptions="Center" WidthRequest="200"  Text="{Binding CriminalPersonItem.Property}"  d:Text="ExtingguisherItem description"  ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="ความสูง : "       TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"  Text="{Binding CriminalPersonItem.Point}"     ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="น้ำหนัก : "       TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"  Text="{Binding CriminalPersonItem.PersonCode}"     ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+                    <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" Text="แผลเป็น / ตำหนิ : "       TextColor="Black"></Label>
+                    <Entry VerticalOptions="Center" WidthRequest="200"   Text="{Binding CriminalPersonItem.ActuationCode}"    ></Entry>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" >
+                    <Button Text="บันทึก" HorizontalOptions="FillAndExpand" BackgroundColor="#169BD5" Clicked="Button_ClickedSave" ></Button>
+                    <Button Text="ยกเลิก" HorizontalOptions="FillAndExpand" BackgroundColor="#F2F2F2" Clicked="Button_ClickedCancle"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
